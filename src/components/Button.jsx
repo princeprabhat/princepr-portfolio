@@ -5,14 +5,16 @@ const Button = ({ className, text, id }) => {
 
     if (target && id) {
       const offset = window.innerHeight * 0.15;
-      const top =
-        target.getBoundingClientRect().top() + window.scrollY - offset;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
       window.scrollTo({ top, behavior: "smooth" });
     }
   };
   return (
-    <a onClick={handleScroll} className={`${className ?? ""} cta-wrapper`}>
+    <a
+      className={`${className ?? ""} cta-wrapper`}
+      onClick={(e) => handleScroll(e)}
+    >
       <div className="cta-button group">
         <div className="bg-circle" />
         <p className="text">{text}</p>
