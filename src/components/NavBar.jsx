@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { navLinks } from "../constants";
+import Logo from "./Logo";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,14 +16,10 @@ const NavBar = () => {
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner">
-        <a className="logo" href="#hero">
-          <img
-            src="/images/logos/logoNameIcon.png"
-            alt="logoIcon"
-            width={60}
-            height={403}
-          />
-        </a>
+        {/* <a className="logo" href="#hero">
+          <img src="/images/logos/logoNameIcon.png" alt="logoIcon" width={60} />
+        </a> */}
+        <Logo />
         <nav className="desktop">
           <ul>
             {navLinks.map(({ link, name }) => {
